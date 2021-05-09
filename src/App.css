@@ -1,0 +1,22 @@
+h1{
+  font-style: italic;
+  text-align: center;
+  
+}
+.Container{
+border-style: solid;
+border-color: red;
+}
+.InitialSetup{
+  width:min-content;
+  border-style: dashed;
+  border-color: saddlebrown;
+}
+.labels{
+  display: flex;
+  justify-content:last baseline;
+  align-items: center;
+}
+.labelText {
+  width:min-content;
+}
