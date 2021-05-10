@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom'
 
 class MommyScheduler extends Component {
     constructor(props) {
@@ -17,18 +18,26 @@ class MommyScheduler extends Component {
         return (
             <div className="Container">
                 <h1>Mommy Scheduler</h1>
+                <div>
+                    
+                    <Link to='/MommyChallenges'>Mommy Challenges</Link>
+                    <Link to='/MommyActivities'>Mommy Activities</Link>
+                    <Link to='/MommyReview'>Mommy Review</Link>    
+                </div>
                 <div className="InitialSetup">
                    
                     <label className="labels">
                         <input
                             name="isChallengeReady"
                             type="checkbox"
+                            readOnly={true}
                             checked={this.state.isChallengeReady}
                         > 
                         </input>
                         <input
                             className="labelText"
                             type="textbox"
+                            readOnly={true}
                             value="Identify Challenges">
                         </input>
                         <button
@@ -41,12 +50,14 @@ class MommyScheduler extends Component {
                         <input
                             name="isActReady"
                             type="checkbox"
+                            readOnly={true}
                             checked={this.state.isActReady}
                         > 
                         </input>
                         <input
                             className="labelText"
                             type="textbox"
+                            readOnly={true}
                             value="Identify activities part of the challenges">
                         </input>
                         <button
@@ -61,12 +72,14 @@ class MommyScheduler extends Component {
                         <input
                             name="isPriorityReady"
                             type="checkbox"
+                            readOnly={true}
                             checked={this.state.isPriorityReady}
                         > 
                         </input>
                         <input
                             className="labelText"
                             type="textbox"
+                            readOnly={true}
                             value="Prioritize activities and time">
                         </input>
                         <button
@@ -80,12 +93,14 @@ class MommyScheduler extends Component {
                         <input
                             name="isSummaryReady"
                             type="checkbox"
+                            readOnly={true}
                             checked={this.state.isSummaryReady}
                         > 
                         </input>
                         <input
                             className="labelText"
                             type="textbox"
+                            readOnly={true}
                             value="Prioritize challenges">
                         </input>
                         <button
@@ -99,12 +114,14 @@ class MommyScheduler extends Component {
                         <input
                             name="isSchedulerReady"
                             type="checkbox"
+                            readOnly={true}
                             checked={this.state.isSchedulerReady}
                         > 
                         </input>
                         <input
                             className="labelText"
                             type="textbox"
+                            readOnly={true}
                             value="Preview Scheduler">
                         </input>
                         <button
@@ -118,12 +135,14 @@ class MommyScheduler extends Component {
                         <input
                             name="isActivationReady"
                             type="checkbox"
+                            readOnly={true}
                             checked={this.state.isActivationReady}
                         > 
                         </input>
                         <input
                             className="labelText"
                             type="textbox"
+                            readOnly={true} 
                             value="Activate Scheduler">
                         </input>
                         <button
