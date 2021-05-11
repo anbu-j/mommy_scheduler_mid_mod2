@@ -3,7 +3,7 @@ h1{
   text-align: center;
   
 }
-.Container{
+.Container1{
 border-style: solid;
 border-color: red;
 }
@@ -19,4 +19,9 @@ border-color: red;
 }
 .labelText {
   width:min-content;
+}
+
+.printChallenges {
+  display: flex;
+  justify-content: space-evenly;
 }

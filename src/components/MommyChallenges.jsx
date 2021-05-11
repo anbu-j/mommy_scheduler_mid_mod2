@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import challenges from '../data/challengedata';
+import {Button} from 'react-bootstrap'
 
 class MommyChallenges extends Component {
     constructor(props){
@@ -13,17 +14,83 @@ class MommyChallenges extends Component {
            isSelected:false
         }
     }
+
+    handleChange=(eventToBeChanged)=>{
+        eventToBeChanged.preventDefault();
+        this.setState(
+            {
+                [eventToBeChanged.target.id]: eventToBeChanged.target.value
+            }
+        )
+    }
+    statusUnSelected=(itemInTheList)=>{
+            this.setState(
+                {
+                    [itemInTheList.isSelected.value]:false
+                }
+            )
+        }    
+    statusSelected=(itemInTheList)=>{
+            this.setState(
+                {
+                    [itemInTheList.isSelected.value]:true
+                }
+            )
+        }     
+        
+    
+    
     render() {
         return (
             <div>
                 <div>
-                    <h1> Identify Challenges </h1> 
+                    <h1> Mommy Challenges </h1> 
                 </div>
                 <div className="printChallenges">
+                <div className="printNonChallenges">
+                    <h3> Identify Challenges</h3>
                     {this.state.challenge.map((itemInTheList,i)=>{
-                    return (<label className="labels">
+                    return itemInTheList.isSelected? '':(<label className="labels">
                     <input
-                        name="isChallengeReady"
+                        id="isChallenge"
+                        type="checkbox"
+                        checked='false'
+                      //  onChange={this.onChageAction.bind(this)}
+                    > 
+                    </input>
+                    <input
+                        className="labelText"
+                        type="textbox"
+                        id="challengeName"
+                        readOnly={true}
+                        value={itemInTheList.name}>
+                    </input>
+                    <input
+                        className="labelText"
+                        type="textbox"
+                        id="challengeDefaultPriority"
+                        placeholder={itemInTheList.priority}
+                        onChange={this.handleChange}
+                        >
+                    </input>
+                    
+                </label>);
+                    
+                    //itemInTheList.name, itemInTheList. ;
+                    
+                    }
+                    )
+
+                    }
+                <Button variant="outline-primary">Select Challenge</Button>
+                </div>
+
+                <div className="printSelChallenges">
+                    <h3> Selected Challenges</h3>
+                    {this.state.challenge.map((itemInTheList,i)=>{
+                    return itemInTheList.isSelected? (<label className="labels">
+                    <input
+                        name="isChallenge"
                         type="checkbox"
                     > 
                     </input>
@@ -39,13 +106,7 @@ class MommyChallenges extends Component {
                         readOnly={true}
                         value={itemInTheList.priority}>
                     </input>
-                    <input
-                        className="labelText"
-                        type="textbox"
-                        readOnly={true}
-                        value={itemInTheList.isSelected }>
-                    </input>
-                </label>)
+                </label>):'';
                     
                     //itemInTheList.name, itemInTheList. ;
                     
@@ -53,6 +114,8 @@ class MommyChallenges extends Component {
                     )
 
                     }
+                <Button variant="outline-primary"> Restore Challenge</Button>
+                </div>
                 </div>
             </div>
             

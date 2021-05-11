@@ -1,11 +1,11 @@
 const challenges = [
    {
-        "isSelected":false,
+        "isSelected":true,
         "name":"Too many chores to do",
         "priority":1
    } ,
    {
-        "isSelected":false,
+        "isSelected":true,
         "name":"Too many goals and future plans",
         "priority":1
     },
@@ -20,7 +20,7 @@ const challenges = [
         "priority":1
     } ,
     {
-        "isSelected":false,
+        "isSelected":true,
         "name":"No time for family",
         "priority":1
    } ,

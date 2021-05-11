@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom'
+//import {Link} from 'react-router-dom';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 
 class MommyScheduler extends Component {
     constructor(props) {
@@ -16,13 +17,25 @@ class MommyScheduler extends Component {
 
     render() {
         return (
-            <div className="Container">
+            
+            <div className="Container1">
                 <h1>Mommy Scheduler</h1>
                 <div>
-                    
-                    <Link to='/MommyChallenges'>Mommy Challenges</Link>
+                <Navbar collapseOnSelect fixed='top' expand='lg' bg='dark' variant='dark'>
+                    <Container>
+                        <Navbar.Toggle aria-controls='responsive-navbar-nav'/>
+                        <Navbar.Collapse id='responsive-navbar-nav'>
+                            <Nav>
+                                {/*<Nav.Link href='/'>Mommy Scheduler</Nav.Link>*/}
+                                <Nav.Link href='/MommyChallenges'>Mommy Challenges</Nav.Link>
+                                <Nav.Link href='/MommyActivities'>Mommy Activities</Nav.Link>
+                            </Nav>
+                    {/*<Link to='/MommyChallenges'>Mommy Challenges</Link>
                     <Link to='/MommyActivities'>Mommy Activities</Link>
-                    <Link to='/MommyReview'>Mommy Review</Link>    
+                    <Link to='/MommyReview'>Mommy Review</Link>    */}
+                        </Navbar.Collapse>
+                    </Container>
+                </Navbar>
                 </div>
                 <div className="InitialSetup">
                    
